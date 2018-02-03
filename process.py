@@ -1,5 +1,6 @@
 import os
 import json
+import sys
     
 def extract_json(json_line):
     flag = 0
@@ -42,3 +43,7 @@ def process_file(prefix, input_dir='/srv/runme', output_dir = '/srv/runme'):
     f.write('\n'.join(result))
     f.close()
     print('Done!')  
+
+if __name__ == '__main__':
+    prefix = sys.argv[1]
+    process_file(prefix, '/home/ec2-user/runme', '/home/ec2-user/runme')
