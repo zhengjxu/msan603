@@ -26,6 +26,10 @@ def process_file(prefix, input_dir='/srv/runme', output_dir = '/srv/runme'):
     
     files = os.listdir(input_dir)
     files = [f for f in files if f.startswith(prefix)]
+    if len(files)==0:
+        print('No qualified files')
+        return None
+
     for file in files:
         file_path = input_dir+'/'+file
         print('process %s' % file_path) 
@@ -46,4 +50,4 @@ def process_file(prefix, input_dir='/srv/runme', output_dir = '/srv/runme'):
 
 if __name__ == '__main__':
     prefix = sys.argv[1]
-    process_file(prefix, '/home/ec2-user/runme', '/home/ec2-user/runme')
+    process_file(prefix, '/srv/runme', '/srv/runme')
