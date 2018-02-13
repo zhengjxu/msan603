@@ -46,4 +46,4 @@ def process_file(prefix, input_dir='/srv/runme', output_dir = '/srv/runme'):
 
 if __name__ == '__main__':
     prefix = sys.argv[1]
-    process_file(prefix, '/home/ec2-user/runme', '/home/ec2-user/runme')
+    process_file(prefix, '/srv/runme', '/srv/runme')
