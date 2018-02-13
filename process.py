@@ -15,6 +15,9 @@ def extract_json(json_line):
     
     # check non-empty
     if name=='' or age=='': flag=1
+
+    # check age
+    if age <0 or isinstance(age, int)==0: flag=1
     
     return '%s\t%s' % (name, age), flag
 
