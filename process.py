@@ -10,7 +10,7 @@ def extract_json(json_line):
         # check present
         name, age = a_dict['name'], a_dict['prop']['age']
     except Exception as e:
-        print('having error load json line: %s' % e)
+        print 'having error load json line: %s' % e
         flag = 1
     
     # check non-empty
@@ -27,12 +27,12 @@ def process_file(prefix, input_dir='/srv/runme', output_dir = '/srv/runme'):
     files = os.listdir(input_dir)
     files = [f for f in files if f.startswith(prefix)]
     if len(files)==0:
-        print('No qualified files')
+        print 'No qualified files'
         return None
 
     for file in files:
         file_path = input_dir+'/'+file
-        print('process %s' % file_path) 
+        print 'process %s' % file_path
         f = open(file_path)
         for json_line in f:
             json_line = json_line[:-1]
@@ -46,7 +46,7 @@ def process_file(prefix, input_dir='/srv/runme', output_dir = '/srv/runme'):
     f = open(output_file, 'w')
     f.write('\n'.join(result))
     f.close()
-    print('Done!')  
+    print 'Done!'
 
 if __name__ == '__main__':
     prefix = sys.argv[1]
