@@ -70,7 +70,7 @@ if __name__ == '__main__':
     prefix = sys.argv[1]
 
     # should change
-    path='/Users/zhengjiexu/Desktop/classes/msan603_busStra/HW/hw6_sprint2'
+    path='/srv/runme'
 
     # check existing file and remove
     check_existing_file(path,prefix,'Raw.txt')

@@ -39,7 +39,7 @@ if __name__ == '__main__':
     when = 'S' # should change to 'M'
 
     # should change for test or homework
-    path ='/Users/zhengjiexu/Desktop/classes/msan603_busStra/HW/hw6_sprint2'
+    path ='/srv/runme'
 
     prefix = sys.argv[1]
     rotate_log(when, path, prefix, 'Raw.txt')
