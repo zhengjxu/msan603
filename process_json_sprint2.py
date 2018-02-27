@@ -29,7 +29,8 @@ def extract_json(json_line):
     if name == '' or age == '': flag = 1
 
     # check age
-    if age <0 or isinstance(age, int)==0: flag=1
+    if isinstance(age, int)==0: flag=1
+    elif age<0: flag=1
 
     return '%s\t%s' % (name, age), flag
 
@@ -57,12 +58,13 @@ def processing_json():
         print('Successfully write in Raw.txt!')
 
     # process json & write to txt
+    
     name_age, flag = extract_json(raw)
     if flag == 0: 
         with open("%s/%s/proc.txt"%(path,prefix), "a") as f2:
             f2.write(name_age+'\n')   # to make sure each record in a line
         print('Successfully write in proc.txt')
-
+    
     return 'Done!'
 
 
